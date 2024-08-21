@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/Pages/bottomnav.dart';
 
 import 'Pages/HomePage.dart';
 
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xFFFFF0B2),
       ),
-      routes: {
-           "/" : (context)=>Homepage(),
-       },
+      // routes: {
+       //    "/" : (context)=>Homepage(),
+       //},
+      home: BottomNav(),
      );
   }
 }

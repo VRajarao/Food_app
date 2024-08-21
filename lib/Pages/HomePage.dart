@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/Pages/details.dart';
 import 'package:projects/Widgets/widget_support.dart';
  class Homepage extends StatefulWidget {
    const Homepage({super.key});
@@ -16,7 +17,7 @@ import 'package:projects/Widgets/widget_support.dart';
          margin: EdgeInsets.only(top: 50.0,left: 20.0),
          child: Column(
            crossAxisAlignment: CrossAxisAlignment.start,
-           children:[
+           children:<Widget>[
              Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
            children: [
@@ -51,23 +52,28 @@ import 'package:projects/Widgets/widget_support.dart';
                scrollDirection: Axis.horizontal,
                child: Row(
                  children: [
-                 Container(
-                   margin: EdgeInsets.all(10),
-                   child: Material(
-                     elevation: 5.0,
-                     borderRadius: BorderRadius.circular(20.0),
-                     child: Container(
-                       padding: EdgeInsets.all(15),
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                         Image.asset("images/salad2.png", height: 150,width: 150,fit: BoxFit.cover),
-                         Text("Vigge taco hash",style: AppWidget.SoldtTextFeildStyle()),
-                           SizedBox(height: 5.0,),
-                         Text("healthy and Good",style: AppWidget.LightTextFeildStyle()),
-                           SizedBox(height: 5.0,),
-                           Text("\$25",style: AppWidget.SoldtTextFeildStyle())
-                       ],),
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>details()));
+                   },
+                   child: Container(
+                     margin: EdgeInsets.all(10),
+                     child: Material(
+                       elevation: 5.0,
+                       borderRadius: BorderRadius.circular(20.0),
+                       child: Container(
+                         padding: EdgeInsets.all(15),
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                           Image.asset("images/salad2.png", height: 150,width: 150,fit: BoxFit.cover),
+                           Text("Vigge taco hash",style: AppWidget.SoldtTextFeildStyle()),
+                             SizedBox(height: 5.0,),
+                           Text("healthy and Good",style: AppWidget.LightTextFeildStyle()),
+                             SizedBox(height: 5.0,),
+                             Text("\$25",style: AppWidget.SoldtTextFeildStyle())
+                         ],),
+                       ),
                      ),
                    ),
                  ),
@@ -113,18 +119,45 @@ import 'package:projects/Widgets/widget_support.dart';
                        ),
                      ),
                    ),
-                     Container(
-                       child: Row(children: [
-                         Image.asset("images/salad2.png",height: 20,width: 20,fit: ,)
-                       ],),
-                     )
                  ],
                ),
+             ),
+              SizedBox(height: 30.0,),
+             Container(
+               margin: EdgeInsets.only(right:20),
+                 child: Material(
+                    elevation: 15.0,
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Image.asset("images/salad2.png",height: 100,width: 100,fit: BoxFit.cover,),
+                      SizedBox(width: 20.0,),
+                      Column(children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width/2,
+                            child: Text("Salad makes it good",style: AppWidget.SoldtTextFeildStyle(),)
+                        ),
+                        Container(
+                            width: MediaQuery.of(context).size.width/2,
+                            child: Text("Simpel good healthy food",style: AppWidget.LightTextFeildStyle(),)
+                        ),
+                        Container(
+                            width: MediaQuery.of(context).size.width/2,
+                            child: Text("\$28",style: AppWidget.SoldtTextFeildStyle(),)
+                        )
+                      ],)
+                    ],
+                    ),
+                  ),
+                ),
              )
-            ]
-          )
+            ],
+          ),
 
-        )
+        ),
      );
    }
    Widget showItem() {
