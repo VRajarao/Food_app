@@ -10,6 +10,16 @@ class AppWidget{
         fontFamily: "Poppins"
     );
   }
+  static TextStyle UnderlineTextFeildStyle(){
+    return const TextStyle(
+        color: Colors.blueAccent,
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold ,
+        fontFamily: "Poppins",
+        decoration: TextDecoration.underline,
+
+    );
+  }
   static TextStyle HeadlineTextFeildStyle(){
     return const TextStyle(
         color: Colors.black,

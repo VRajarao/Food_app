@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:projects/Pages/Login.dart';
-
-
-import 'package:projects/Widgets/widget_support.dart';class Signup extends StatefulWidget {
-  const Signup({super.key});
+import 'package:projects/Pages/Signup.dart';
+import 'package:projects/Widgets/widget_support.dart';
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignupState extends State<Signup> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,19 +68,8 @@ class _SignupState extends State<Signup> {
                         children: [
                           const SizedBox(height: 10.0),
                           Text(
-                            "Sign Up",
+                            "Log In",
                             style: AppWidget.HeadlineTextFeildStyle(),
-                          ),
-                          const SizedBox(height: 30.0),
-                          TextField(
-                            decoration: InputDecoration(
-                              hintText: "Name",
-                              hintStyle: AppWidget.SoldtTextFeildStyle(),
-                              prefixIcon: const Icon(
-                                Icons.person_2_outlined,
-                                color: Colors.black,
-                              ),
-                            ),
                           ),
 
                           const SizedBox(height: 30.0),
@@ -143,14 +131,14 @@ class _SignupState extends State<Signup> {
                             padding: EdgeInsets.only(left: 25,bottom: 10) ,
                             child: Row(
                               children: [
-                                Text("Already have an account?",
+                                Text("Don't have an account?",
                                   style: AppWidget.SoldtTextFeildStyle(),),
 
                                 GestureDetector(
                                   onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Login()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Signup()));
                                   },
-                                  child: Text(" Log in",
+                                  child: Text(" Sign Up",
                                     style: AppWidget.UnderlineTextFeildStyle(),
 
                                   ),
@@ -171,3 +159,4 @@ class _SignupState extends State<Signup> {
     );
   }
 }
+
